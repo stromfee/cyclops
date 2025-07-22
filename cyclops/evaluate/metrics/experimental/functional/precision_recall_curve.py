@@ -65,15 +65,15 @@ def _validate_thresholds(thresholds: Optional[Union[int, List[float], Array]]) -
 
     if apc.is_array_api_obj(thresholds):
         xp = apc.array_namespace(thresholds)
-        if not xp.all((thresholds >= 0) & (thresholds <= 1)):  # type: ignore
+        if not xp.all((thresholds >= 0) & (thresholds <= 1)):
             raise ValueError(
                 "Expected argument `thresholds` to be an Array of floats in the [0,1] "
                 f"range, but got {thresholds}",
             )
-        if not thresholds.ndim == 1:  # type: ignore
+        if not thresholds.ndim == 1:
             raise ValueError(
                 "Expected argument `thresholds` to be a 1D Array, but got an Array with "
-                f"{thresholds.ndim} dimensions",  # type: ignore
+                f"{thresholds.ndim} dimensions",
             )
 
 
@@ -284,9 +284,9 @@ def _binary_precision_recall_curve_compute(
     """Compute the precision and recall for all unique thresholds."""
     if apc.is_array_api_obj(state) and thresholds is not None:
         xp = apc.array_namespace(state, thresholds)
-        tps = state[:, 1, 1]  # type: ignore[call-overload]
-        fps = state[:, 0, 1]  # type: ignore[call-overload]
-        fns = state[:, 1, 0]  # type: ignore[call-overload]
+        tps = state[:, 1, 1]
+        fps = state[:, 0, 1]
+        fns = state[:, 1, 0]
         precision = safe_divide(tps, tps + fps)
         recall = safe_divide(tps, tps + fns)
         precision = xp.concat(
@@ -322,8 +322,8 @@ def _binary_precision_recall_curve_compute(
     )
     thresholds = xp.flip(thresholds, axis=0)
     if hasattr(thresholds, "detach"):
-        thresholds = clone(thresholds.detach())  # type: ignore
-    return precision, recall, thresholds  # type: ignore[return-value]
+        thresholds = clone(thresholds.detach())
+    return precision, recall, thresholds
 
 
 def binary_precision_recall_curve(
@@ -541,7 +541,7 @@ def _multiclass_precision_recall_curve_validate_arrays(
             f"values in `target` but found {num_unique_values} values.",
         )
 
-    return xp  # type: ignore[no-any-return]
+    return xp
 
 
 def _multiclass_precision_recall_curve_format_arrays(
@@ -618,9 +618,9 @@ def _multiclass_precision_recall_curve_compute(
 
     if apc.is_array_api_obj(state) and thresholds is not None:
         xp = apc.array_namespace(state, thresholds)
-        tps = state[:, :, 1, 1]  # type: ignore[call-overload]
-        fps = state[:, :, 0, 1]  # type: ignore[call-overload]
-        fns = state[:, :, 1, 0]  # type: ignore[call-overload]
+        tps = state[:, :, 1, 1]
+        fps = state[:, :, 0, 1]
+        fns = state[:, :, 1, 0]
         precision = safe_divide(tps, tps + fps)
         recall = safe_divide(tps, tps + fns)
         precision = xp.concat(
@@ -989,9 +989,9 @@ def _multilabel_precision_recall_curve_compute(
     """Compute the precision and recall for all unique thresholds."""
     if apc.is_array_api_obj(state) and thresholds is not None:
         xp = apc.array_namespace(state)
-        tps = state[:, :, 1, 1]  # type: ignore[call-overload]
-        fps = state[:, :, 0, 1]  # type: ignore[call-overload]
-        fns = state[:, :, 1, 0]  # type: ignore[call-overload]
+        tps = state[:, :, 1, 1]
+        fps = state[:, :, 0, 1]
+        fns = state[:, :, 1, 0]
         precision = safe_divide(tps, tps + fps)
         recall = safe_divide(tps, tps + fns)
         precision = xp.concat(

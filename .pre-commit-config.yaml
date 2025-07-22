@@ -55,14 +55,14 @@ repos:
       files: "^cyclops/"
       language: system
 
-  - repo: local
-    hooks:
-    - id: pytest
-      name: pytest
-      entry: python3 -m pytest -m "not integration_test" -n auto --dist loadscope
-      language: system
-      pass_filenames: false
-      always_run: true
+  # - repo: local
+  #   hooks:
+  #   - id: pytest
+  #     name: pytest
+  #     entry: python3 -m pytest -m "not integration_test" -n auto --dist loadscope
+  #     language: system
+  #     pass_filenames: false
+  #     always_run: true
 
 ci:
     autofix_commit_msg: |

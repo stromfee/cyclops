@@ -229,7 +229,7 @@ def _reduce_average_precision(
     """
     if apc.is_array_api_obj(precision) and apc.is_array_api_obj(recall):
         avg_prec = -xp.sum(
-            (recall[:, 1:] - recall[:, :-1]) * precision[:, :-1],  # type: ignore
+            (recall[:, 1:] - recall[:, :-1]) * precision[:, :-1],
             axis=1,
             dtype=xp.float32,
         )

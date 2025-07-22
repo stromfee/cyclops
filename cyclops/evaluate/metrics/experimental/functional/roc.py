@@ -45,10 +45,10 @@ def _binary_roc_compute(
     """Compute the binary ROC curve."""
     if apc.is_array_api_obj(state) and thresholds is not None:
         xp = apc.array_namespace(state, thresholds)
-        tps = state[:, 1, 1]  # type: ignore[call-overload]
-        fps = state[:, 0, 1]  # type: ignore[call-overload]
-        fns = state[:, 1, 0]  # type: ignore[call-overload]
-        tns = state[:, 0, 0]  # type: ignore[call-overload]
+        tps = state[:, 1, 1]
+        fps = state[:, 0, 1]
+        fns = state[:, 1, 0]
+        tns = state[:, 0, 0]
         tpr = xp.flip(safe_divide(tps, tps + fns), axis=0)
         fpr = xp.flip(safe_divide(fps, fps + tns), axis=0)
         thresh = xp.flip(thresholds, axis=0)
@@ -230,10 +230,10 @@ def _multiclass_roc_compute(
 
     if apc.is_array_api_obj(state) and thresholds is not None:
         xp = apc.array_namespace(state, thresholds)
-        tps = state[:, :, 1, 1]  # type: ignore[call-overload]
-        fps = state[:, :, 0, 1]  # type: ignore[call-overload]
-        fns = state[:, :, 1, 0]  # type: ignore[call-overload]
-        tns = state[:, :, 0, 0]  # type: ignore[call-overload]
+        tps = state[:, :, 1, 1]
+        fps = state[:, :, 0, 1]
+        fns = state[:, :, 1, 0]
+        tns = state[:, :, 0, 0]
         tpr = xp.flip(safe_divide(tps, tps + fns), axis=0).T
         fpr = xp.flip(safe_divide(fps, fps + tns), axis=0).T
         thresh = xp.flip(thresholds, axis=0)
@@ -473,10 +473,10 @@ def _multilabel_roc_compute(
     """Compute the multilabel ROC curve."""
     if apc.is_array_api_obj(state) and thresholds is not None:
         xp = apc.array_namespace(state)
-        tps = state[:, :, 1, 1]  # type: ignore[call-overload]
-        fps = state[:, :, 0, 1]  # type: ignore[call-overload]
-        fns = state[:, :, 1, 0]  # type: ignore[call-overload]
-        tns = state[:, :, 0, 0]  # type: ignore[call-overload]
+        tps = state[:, :, 1, 1]
+        fps = state[:, :, 0, 1]
+        fns = state[:, :, 1, 0]
+        tns = state[:, :, 0, 0]
         tpr = xp.flip(safe_divide(tps, tps + fns), axis=0).T
         fpr = xp.flip(safe_divide(fps, fps + tns), axis=0).T
         thresh = xp.flip(thresholds, axis=0)

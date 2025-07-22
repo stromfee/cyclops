@@ -234,7 +234,7 @@ def _reduce_auroc(
 
     """
     if apc.is_array_api_obj(fpr) and apc.is_array_api_obj(tpr):
-        res = _auc_compute(fpr, tpr, 1.0, axis=1)  # type: ignore
+        res = _auc_compute(fpr, tpr, 1.0, axis=1)
     else:
         res = xp.stack(
             [_auc_compute(x, y, 1.0) for x, y in zip(fpr, tpr)],  # type: ignore

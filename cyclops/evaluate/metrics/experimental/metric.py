@@ -414,7 +414,7 @@ class Metric(ABC):
                 setattr(
                     self,
                     state_name,
-                    apc.to_device(clone(default_value), self.device),  # type: ignore[arg-type]
+                    apc.to_device(clone(default_value), self.device),
                 )
             elif isinstance(default_value, list):
                 setattr(

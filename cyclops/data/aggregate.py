@@ -761,4 +761,4 @@ def timestamp_ffill_agg(
     if fill_nan is not None:
         arr = np.nan_to_num(arr, nan=fill_nan)
 
-    return arr
+    return arr  # type: ignore[no-any-return]
