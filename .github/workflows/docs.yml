@@ -21,7 +21,7 @@ jobs:
         uses: astral-sh/setup-uv@4db96194c378173c656ce18a155ffc14a9fc4355
         with:
           # Install a specific version of uv.
-          version: "0.5.21"
+          version: "0.7.20"
           enable-cache: true
 
       - name: "Set up Python"
@@ -47,7 +47,7 @@ jobs:
           fi
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4.3.0
+        uses: actions/setup-node@v4.4.0
         with:
           node-version: 18
           cache: yarn
