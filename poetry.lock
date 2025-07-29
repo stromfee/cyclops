@@ -610,15 +610,15 @@ lxml = ["lxml"]
 
 [[package]]
 name = "bentoml"
-version = "1.4.8"
+version = "1.4.19"
 description = "BentoML: The easiest way to serve AI apps and models"
 optional = false
 python-versions = ">=3.9"
 groups = ["deploy_models"]
 markers = "platform_system == \"Linux\" and platform_machine == \"aarch64\""
 files = [
-    {file = "bentoml-1.4.8-py3-none-any.whl", hash = "sha256:b33765e15101348fa6ca1fe68f07b3309ad4ea5c8823e56c2358a1b09b29edbb"},
-    {file = "bentoml-1.4.8.tar.gz", hash = "sha256:fb7e1d21a415645afdeb928f45a1950b7409960b5d9360189b777640c96f7103"},
+    {file = "bentoml-1.4.19-py3-none-any.whl", hash = "sha256:daf32fd65eb1dbd02f3fbcfd211005418d2323fb64f75057e09b04be08ae6e45"},
+    {file = "bentoml-1.4.19.tar.gz", hash = "sha256:845e6d344f10a0e28dea5cb960775a51b0239ff48caab50d327d3dac4336d5d6"},
 ]
 
 [package.dependencies]
@@ -651,7 +651,6 @@ prometheus-client = ">=0.10.0"
 psutil = "*"
 pydantic = "<3"
 python-dateutil = "*"
-python-dotenv = ">=1.0.1"
 python-json-logger = "*"
 python-multipart = "*"
 pyyaml = ">=5.0"
@@ -6910,7 +6909,7 @@ version = "1.0.1"
 description = "Read key-value pairs from a .env file and set them as environment variables"
 optional = false
 python-versions = ">=3.8"
-groups = ["deploy_models", "deploy_report"]
+groups = ["deploy_report"]
 markers = "platform_system == \"Linux\" and platform_machine == \"aarch64\""
 files = [
     {file = "python-dotenv-1.0.1.tar.gz", hash = "sha256:e324ee90a023d808f1959c46bcbc04446a10ced277783dc6ee09987c37ec10ca"},
@@ -10687,4 +10686,4 @@ xgboost = ["xgboost"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.9, <3.12"
-content-hash = "eb008d5b461d894718bd93fa05ba735ee00bc350f24a188d960dcefefe94f732"
+content-hash = "34ef7d8ebaf81708fd271ce99f78affab117130330ffd060ae1adc142afef44c"
