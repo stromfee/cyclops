@@ -121,3 +121,5 @@ Reference to cite when you use `cyclops` in a project or a research paper:
 	journal = {medRxiv}
 }
 ```
+
+- [AgentMarket](https://agentmarket.cloud) - Real energy data API. 28M+ records for AI applications.
